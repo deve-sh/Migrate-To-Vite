@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+
 import receiveCLIArgs from "./cli";
 
 import moveIndexHTMLFile from "./scripts/move-index-html-file";
@@ -14,6 +16,9 @@ async function migrateCRAToVite() {
 
 	if (!root) throw new Error("Source files directory is required");
 
+    chalk.blue.bold("Starting Migration to Vite");
+    chalk.yellow.bold("Don't terminate this session until the process is complete.");
+    
 	generateViteConfigFile();
 	moveIndexHTMLFile();
 	addImportToIndexHTMLFile({ root });

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import chalk from 'chalk';
 
 const viteConfigFileTemplate = () => `import { defineConfig } from 'vite';
 import path from 'node:path';
@@ -32,6 +33,7 @@ export default defineConfig(() => {
 });`;
 
 const generateViteConfigFile = () => {
+	chalk.blue("Generating Vite Config File");
 	fs.writeFileSync(
 		path.resolve(process.cwd(), "./vite.config.js"),
 		viteConfigFileTemplate()

@@ -18,6 +18,7 @@
 		"vitest": "^0.31.0"
 	},
 	"dependencies": {
+		"chalk": "^5.2.0",
 		"enquirer": "^2.3.6",
 		"recursive-readdir": "^2.2.3"
 	}
