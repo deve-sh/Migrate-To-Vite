@@ -5,18 +5,20 @@ import addImportToIndexHTMLFile from "./scripts/add-import-to-index-html-file";
 import renameFilesContainingReact from "./scripts/rename-files-containing-react";
 
 import generateViteConfigFile from "./scripts/generate-vite-config-file";
+import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
 
 async function migrateCRAToVite() {
-	const { shouldRenameFileExtensionsWithReact, rootDir } =
+	const { shouldRenameFileExtensionsWithReact, rootDir: root } =
 		await receiveCLIArgs();
 
-	if (!rootDir) throw new Error("Source files directory is required");
-	const options = { root: rootDir };
+	if (!root) throw new Error("Source files directory is required");
 
 	generateViteConfigFile();
 	moveIndexHTMLFile();
-	addImportToIndexHTMLFile(options);
-	if (shouldRenameFileExtensionsWithReact) renameFilesContainingReact(options);
+	addImportToIndexHTMLFile({ root });
+	if (shouldRenameFileExtensionsWithReact)
+		await renameFilesContainingReact({ root });
+	await findAndReplaceEnvVariables({ root });
 }
 
 migrateCRAToVite();
