@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"bundle-packages": "tsup",
+		"bundle-packages:watch": "tsup --watch",
 		"migrate-cra": "echo \"In Progress\" && exit 0"
 	},
 	"keywords": [],
