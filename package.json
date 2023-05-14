@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"bundle-packages": "tsup",
 		"migrate-cra": "echo \"In Progress\" && exit 0"
 	},
 	"keywords": [],
