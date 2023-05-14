@@ -1,0 +1,17 @@
+{
+	"name": "migrate-to-vite",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"migrate-cra": "echo \"In Progress\" && exit 0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"prettier": "^2.8.8",
+		"tsup": "^6.7.0",
+		"vitest": "^0.31.0"
+	}
+}
