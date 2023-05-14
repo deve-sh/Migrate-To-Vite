@@ -6,6 +6,7 @@ import renameFilesContainingReact from "./scripts/rename-files-containing-react"
 import generateViteConfigFile from "./scripts/generate-vite-config-file";
 import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
 import updateGitIgnore from "./scripts/update-gitignore";
+import updatePackageJSON from "./scripts/update-package-json";
 
 async function migrateCRAToVite() {
 	const { shouldRenameFileExtensionsWithReact, rootDir: root } =
@@ -20,6 +21,7 @@ async function migrateCRAToVite() {
 		await renameFilesContainingReact({ root });
 	await findAndReplaceEnvVariables({ root });
     updateGitIgnore();
+    updatePackageJSON();
 }
 
 migrateCRAToVite();
