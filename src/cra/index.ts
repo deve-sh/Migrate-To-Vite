@@ -8,10 +8,11 @@ import addImportToIndexHTMLFile from "./scripts/add-import-to-index-html-file";
 import renameFilesContainingReact from "./scripts/rename-files-containing-react";
 import generateViteConfigFile from "./scripts/generate-vite-config-file";
 import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
+import installAllDependencies from "./scripts/install-all-dependencies";
 import updateGitIgnore from "./scripts/update-gitignore";
 import updatePackageJSON from "./scripts/update-package-json";
+import updateTSConfigFile from "./scripts/update-tsconfig";
 import addAllChangesToBeCommitted from "./scripts/add-all-changes-to-be-commited";
-import installAllDependencies from "./scripts/install-all-dependencies";
 
 async function migrateCRAToVite() {
 	const {
@@ -35,6 +36,7 @@ async function migrateCRAToVite() {
 	installAllDependencies({ packageManager });
 	updateGitIgnore();
 	updatePackageJSON();
+	updateTSConfigFile();
 	addAllChangesToBeCommitted();
 }
 
