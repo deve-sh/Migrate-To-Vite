@@ -5,6 +5,7 @@ const enquirer = new Enquirer();
 interface CLIArgs {
 	rootDir: string;
 	shouldRenameFileExtensionsWithReact: boolean;
+	packageManager: "npm" | "yarn" | "pnpm";
 }
 
 const receiveCLIArgs = async (): Promise<CLIArgs> => {
@@ -22,6 +23,13 @@ const receiveCLIArgs = async (): Promise<CLIArgs> => {
 			message:
 				"Rename file extensions to .jsx/.tsx that contain React code? Vite requires this",
 			initial: true,
+		},
+		{
+			type: "autocomplete",
+			name: "packageManager",
+			message: "The package manager you use",
+			initial: 0,
+			choices: ["npm", "yarn", "pnpm"],
 		},
 	];
 	const answers = await enquirer.prompt(questions);
