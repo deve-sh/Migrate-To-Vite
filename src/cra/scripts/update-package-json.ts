@@ -22,6 +22,10 @@ const updatePackageJSON = () => {
 		/(react-scripts|craco) build/,
 		"vite build"
 	);
+	fs.writeFileSync(
+		path.resolve(process.cwd(), "./package.json"),
+		JSON.stringify(packageJSON, null, 2)
+	);
 };
 
 export default updatePackageJSON;

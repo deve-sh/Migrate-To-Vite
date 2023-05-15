@@ -8,9 +8,9 @@ import addImportToIndexHTMLFile from "./scripts/add-import-to-index-html-file";
 import renameFilesContainingReact from "./scripts/rename-files-containing-react";
 import generateViteConfigFile from "./scripts/generate-vite-config-file";
 import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
-import installAllDependencies from "./scripts/install-all-dependencies";
 import updateGitIgnore from "./scripts/update-gitignore";
 import updatePackageJSON from "./scripts/update-package-json";
+import installAllDependencies from "./scripts/install-all-dependencies";
 import updateTSConfigFile from "./scripts/update-tsconfig";
 import addAllChangesToBeCommitted from "./scripts/add-all-changes-to-be-commited";
 
@@ -33,9 +33,9 @@ async function migrateCRAToVite() {
 	if (shouldRenameFileExtensionsWithReact)
 		await renameFilesContainingReact({ root });
 	await findAndReplaceEnvVariables({ root });
-	installAllDependencies({ packageManager });
 	updateGitIgnore();
 	updatePackageJSON();
+	installAllDependencies({ packageManager });
 	updateTSConfigFile();
 	addAllChangesToBeCommitted();
 }
