@@ -1,10 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
-import chalk from 'chalk';
+import chalk from "chalk";
 
 const viteConfigFileTemplate = () => `import { defineConfig } from 'vite';
-import path from 'node:path';
 import react from '@vitejs/plugin-react-swc';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig(() => {
 	return {
@@ -14,6 +15,7 @@ export default defineConfig(() => {
 			outDir: 'build',
 			sourcemap: false,
 		},
+		publicDir: 'public',
 		server: {
 			open: true,
 			port: process.env.PORT || 3000,
@@ -28,7 +30,7 @@ export default defineConfig(() => {
 				// Add your code aliases here, like you would in jsconfig or tsconfig files if not already done
 			},
 		},
-		plugins: [react()],
+		plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
 	};
 });`;
 

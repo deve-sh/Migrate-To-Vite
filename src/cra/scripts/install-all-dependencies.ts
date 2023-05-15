@@ -9,6 +9,8 @@ const devDependenciesToInstall = [
 	"vite",
 	"eslint-plugin-react-app",
 	"@vitejs/plugin-react-swc",
+	"vite-tsconfig-paths",
+	"vite-plugin-svgr",
 ];
 const dependenciesToInstall = [];
 
