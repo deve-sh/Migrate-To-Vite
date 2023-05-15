@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from "chalk";
 
 import receiveCLIArgs from "./cli";
 
@@ -9,24 +9,31 @@ import generateViteConfigFile from "./scripts/generate-vite-config-file";
 import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
 import updateGitIgnore from "./scripts/update-gitignore";
 import updatePackageJSON from "./scripts/update-package-json";
+import addAllChangesToBeCommitted from "./scripts/add-all-changes-to-be-commited";
+import installAllDependencies from "./scripts/install-all-dependencies";
 
 async function migrateCRAToVite() {
-	const { shouldRenameFileExtensionsWithReact, rootDir: root } =
-		await receiveCLIArgs();
+	const {
+		shouldRenameFileExtensionsWithReact,
+		rootDir: root,
+		packageManager,
+	} = await receiveCLIArgs();
 
 	if (!root) throw new Error("Source files directory is required");
 
-    chalk.blue.bold("Starting Migration to Vite");
-    chalk.yellow.bold("Don't terminate this session until the process is complete.");
-    
+	chalk.blue.bold("Starting Migration to Vite");
+	chalk.yellow.bold("Don't terminate this session until the process is complete.");
+
 	generateViteConfigFile();
 	moveIndexHTMLFile();
 	addImportToIndexHTMLFile({ root });
 	if (shouldRenameFileExtensionsWithReact)
 		await renameFilesContainingReact({ root });
 	await findAndReplaceEnvVariables({ root });
-    updateGitIgnore();
-    updatePackageJSON();
+	installAllDependencies({ packageManager });
+	updateGitIgnore();
+	updatePackageJSON();
+	addAllChangesToBeCommitted();
 }
 
 migrateCRAToVite();
