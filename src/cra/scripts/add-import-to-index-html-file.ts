@@ -1,14 +1,36 @@
 import fs from "node:fs";
 import path from "node:path";
+import filePathExists from "../../utils/file-path-exists";
 
 interface Args {
 	root: string;
 }
 
-const addImportToIndexHTMLFile = ({ root }: Args) => {
-	const htmlContent = fs.readFileSync(path.resolve(process.cwd(), "./index.html"), "utf-8");
-	// TODO: Add a script tag referencing the index.(ts/js/tsx/jsx) file in the root directory.
-	const tag = `<script type=""></script>`;
+const addSourceImportToIndexHTMLFile = ({ root }: Args) => {
+	const indexHTMLPath = path.resolve(process.cwd(), "./index.html");
+	const htmlContent = fs.readFileSync(indexHTMLPath, "utf-8");
+	const indexTSXFileExists = filePathExists(
+		path.resolve(process.cwd(), root, "./index.tsx")
+	);
+	const indexJSXFileExists = filePathExists(
+		path.resolve(process.cwd(), root, "./index.tsx")
+	);
+	const fileToImport = indexTSXFileExists
+		? "index.tsx"
+		: indexJSXFileExists
+		? "index.jsx"
+		: "";
+	if (fileToImport) {
+		const tag = `<script type="module" src="${root.replace(
+			".",
+			""
+		)}/${fileToImport}"></script>`;
+		fs.writeFileSync(
+			indexHTMLPath,
+			htmlContent.replace("</body>", `${tag}\n</body>`)
+		);
+	} else
+		throw new Error("No index.tsx/index.jsx file found in your source folder");
 };
 
-export default addImportToIndexHTMLFile;
+export default addSourceImportToIndexHTMLFile;

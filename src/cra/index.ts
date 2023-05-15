@@ -4,7 +4,7 @@ import receiveCLIArgs from "./cli";
 
 import moveIndexHTMLFile from "./scripts/move-index-html-file";
 import removePublicURLFromIndexHTMLFile from "./scripts/remove-public-url-from-index-html-file";
-import addImportToIndexHTMLFile from "./scripts/add-import-to-index-html-file";
+import addSourceImportToIndexHTMLFile from "./scripts/add-import-to-index-html-file";
 import renameFilesContainingReact from "./scripts/rename-files-containing-react";
 import generateViteConfigFile from "./scripts/generate-vite-config-file";
 import findAndReplaceEnvVariables from "./scripts/find-and-replace-env";
@@ -29,10 +29,10 @@ async function migrateCRAToVite() {
 	generateViteConfigFile();
 	moveIndexHTMLFile();
 	removePublicURLFromIndexHTMLFile();
-	addImportToIndexHTMLFile({ root });
 	if (shouldRenameFileExtensionsWithReact)
 		await renameFilesContainingReact({ root });
 	await findAndReplaceEnvVariables({ root });
+	addSourceImportToIndexHTMLFile({ root });
 	updateGitIgnore();
 	updatePackageJSON();
 	installAllDependencies({ packageManager });
