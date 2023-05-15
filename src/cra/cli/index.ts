@@ -32,8 +32,12 @@ const receiveCLIArgs = async (): Promise<CLIArgs> => {
 			choices: ["npm", "yarn", "pnpm"],
 		},
 	];
-	const answers = await enquirer.prompt(questions);
-	return answers as CLIArgs;
+	const answers = (await enquirer.prompt(questions)) as CLIArgs;
+	if (!answers.rootDir.startsWith("./"))
+		throw new Error(
+			"Source code directory path should be a relative path. I.E: Start with ./"
+		);
+	return answers;
 };
 
 export default receiveCLIArgs;
