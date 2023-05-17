@@ -1,6 +1,6 @@
 {
 	"name": "migrate-to-vite",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -9,8 +9,15 @@
 		"pre-publish": "npm run bundle-packages && node scripts/pre-publish",
 		"publish-package": "npm run pre-publish && cd ./dist && npm publish"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"Codemod",
+		"Vite",
+		"CRA",
+		"Migration"
+	],
+	"repository": "https://github.com/deve-sh/Migrate-To-Vite",
+	"readme": "https://github.com/deve-sh/Migrate-To-Vite/blob/main/README.md",
+	"author": "Devesh Kumar",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/recursive-readdir": "^2.2.1",
@@ -24,6 +31,6 @@
 		"recursive-readdir": "^2.2.3"
 	},
 	"bin": {
-		"migrate-cra-to-vite": "node cra"
+		"migrate-cra-to-vite": "./cra"
 	}
 }
