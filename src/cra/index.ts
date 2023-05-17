@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import chalk from "chalk";
 
 import receiveCLIArgs from "./cli";
@@ -57,4 +55,4 @@ async function migrateCRAToVite() {
 	);
 }
 
-migrateCRAToVite();
+export default migrateCRAToVite;
