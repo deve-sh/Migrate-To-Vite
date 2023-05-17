@@ -6,7 +6,8 @@
 	"scripts": {
 		"bundle-packages": "tsup",
 		"bundle-packages:watch": "tsup --watch",
-		"migrate-cra": "node dist/cra"
+		"prepublish": "npm run bundle-packages && node scripts/pre-publish",
+		"publish": "cd ./dist && npm publish"
 	},
 	"keywords": [],
 	"author": "",
