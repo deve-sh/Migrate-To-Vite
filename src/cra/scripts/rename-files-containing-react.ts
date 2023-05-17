@@ -13,7 +13,9 @@ const renameFilesContainingReact = async ({ root }: Args) => {
 	]);
 	files.forEach((file) => {
 		const content = fs.readFileSync(file, "utf-8");
-		if (content.indexOf("import React") !== -1) fs.renameSync(file, file + "x");
+		if (content.includes("import React")) return fs.renameSync(file, file + "x");
+		if (content.includes("</")) return fs.renameSync(file, file + "x");
+		if (content.includes("/>")) return fs.renameSync(file, file + "x");
 	});
 };
 
