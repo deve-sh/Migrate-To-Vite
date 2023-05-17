@@ -1,7 +1,7 @@
 {
 	"name": "migrate-to-vite",
-	"version": "0.0.7",
-	"description": "",
+	"version": "0.0.8",
+	"description": "Migrate your projects to Vite using pre-built codemods",
 	"main": "index.js",
 	"scripts": {
 		"bundle-packages": "tsup",

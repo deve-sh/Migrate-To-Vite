@@ -18,7 +18,7 @@ npx migrate-to-vite cra
 or just:
 
 ```bash
-npx migrate-to-vite@0.0.7 cra
+npx migrate-to-vite@latest cra
 ```
 
 This will open up a terminal Q/A session that will automatically migrate the project to the required Vite settings.

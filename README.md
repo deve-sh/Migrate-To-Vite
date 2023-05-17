@@ -14,7 +14,7 @@ npx migrate-to-vite cra
 or just:
 
 ```bash
-npx migrate-to-vite@0.0.7 cra
+npx migrate-to-vite@latest cra
 ```
 
 If you would like to contribute more codemods, feel free to fork the repo and make changes.
