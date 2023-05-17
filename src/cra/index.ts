@@ -50,7 +50,7 @@ async function migrateCRAToVite() {
 	console.log(chalk.green.bold("Migration to Vite is complete"));
 	console.log(
 		chalk.blueBright(
-			"There might be additional steps that might be needed post this step. Check https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md for details."
+			"There might be additional steps that might be needed post this step. Check https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md#ran-the-codemod-what-else-do-i-need-to-do for details."
 		)
 	);
 }
