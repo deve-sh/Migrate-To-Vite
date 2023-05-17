@@ -15,6 +15,12 @@ npm i -g migrate-to-vite
 npx migrate-to-vite cra
 ```
 
+or just:
+
+```bash
+npx migrate-to-vite@0.0.7 cra
+```
+
 This will open up a terminal Q/A session that will automatically migrate the project to the required Vite settings.
 
 ### Things that have to be done to migrate a CRA App to Vite

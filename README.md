@@ -11,6 +11,12 @@ npm i -g migrate-to-vite
 npx migrate-to-vite cra
 ```
 
+or just:
+
+```bash
+npx migrate-to-vite@0.0.7 cra
+```
+
 If you would like to contribute more codemods, feel free to fork the repo and make changes.
 
 ### Setting up locally and testing

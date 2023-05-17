@@ -7,7 +7,7 @@ export default defineConfig({
 		// Add more as other framework/tooling migrations are added
 	},
 	splitting: true,
-	sourcemap: true,
+	sourcemap: false,
 	clean: true,
 	minify: true,
 });
