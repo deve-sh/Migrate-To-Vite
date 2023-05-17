@@ -27,7 +27,7 @@ const addSourceImportToIndexHTMLFile = ({ root }: Args) => {
 		)}/${fileToImport}"></script>`;
 		fs.writeFileSync(
 			indexHTMLPath,
-			htmlContent.replace("</body>", `${tag}\n</body>`)
+			htmlContent.replace("</body>", `\t\t${tag}\n\t</body>`)
 		);
 	} else
 		throw new Error("No index.tsx/index.jsx file found in your source folder");
