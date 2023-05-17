@@ -13,7 +13,7 @@ const addSourceImportToIndexHTMLFile = ({ root }: Args) => {
 		path.resolve(process.cwd(), root, "./index.tsx")
 	);
 	const indexJSXFileExists = filePathExists(
-		path.resolve(process.cwd(), root, "./index.tsx")
+		path.resolve(process.cwd(), root, "./index.jsx")
 	);
 	const fileToImport = indexTSXFileExists
 		? "index.tsx"
