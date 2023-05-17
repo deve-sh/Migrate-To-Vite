@@ -37,6 +37,7 @@ This will open up a terminal Q/A session that will automatically migrate the pro
 
 These are optional settings that you might have to do depending on your own
 
+-   If you use prettier, run prettier on all the staged files to clean up changes and indentation issues.
 -   Adding a postcss file if you are using a CSS preprocessor plugin like Tailwind.
 -   Adding `sass` and using its plugin if you are using SASS for your CSS, support for which comes built in with CRA and Vite.
 -   Migrating to `React.lazy` and `Suspense` in case you are lazy-loading components and using a library like react-loadable which might not completely work as expected with Vite.

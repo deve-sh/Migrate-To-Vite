@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import chalk from "chalk";
-import prettier from "prettier";
 
 const viteConfigFileTemplate = () => `import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
@@ -39,7 +38,7 @@ const generateViteConfigFile = () => {
 	console.log(chalk.blue("Generating Vite Config File"));
 	fs.writeFileSync(
 		path.resolve(process.cwd(), "./vite.config.js"),
-		prettier.format(viteConfigFileTemplate())
+		viteConfigFileTemplate()
 	);
 };
 

@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import prettier from "prettier";
 import filePathExists from "../../utils/file-path-exists";
 
 interface Args {
@@ -28,7 +27,7 @@ const addSourceImportToIndexHTMLFile = ({ root }: Args) => {
 		)}/${fileToImport}"></script>`;
 		fs.writeFileSync(
 			indexHTMLPath,
-			prettier.format(htmlContent.replace("</body>", `\t\t${tag}\n\t</body>`))
+			htmlContent.replace("</body>", `\t\t${tag}\n\t</body>`)
 		);
 	} else
 		throw new Error("No index.tsx/index.jsx file found in your source folder");

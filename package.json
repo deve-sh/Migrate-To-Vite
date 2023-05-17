@@ -27,7 +27,6 @@
 	"dependencies": {
 		"chalk": "^4.1.0",
 		"enquirer": "^2.3.6",
-		"prettier": "^2.8.8",
 		"recursive-readdir": "^2.2.3"
 	},
 	"bin": {

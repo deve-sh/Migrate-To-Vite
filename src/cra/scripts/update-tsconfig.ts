@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import chalk from "chalk";
-import prettier from "prettier";
 
 const addToArrayIfNotExists = (
 	obj: Record<string, any>,
@@ -29,10 +28,7 @@ const updateTSConfigFile = () => {
 		addToArrayIfNotExists(tsConfig.compilerOptions, "libs", "dom");
 		addToArrayIfNotExists(tsConfig.compilerOptions, "libs", "dom.iterable");
 		addToArrayIfNotExists(tsConfig.compilerOptions, "libs", "esnext");
-		fs.writeFileSync(
-			"./tsconfig.json",
-			prettier.format(JSON.stringify(tsConfig, null, 2))
-		);
+		fs.writeFileSync("./tsconfig.json", JSON.stringify(tsConfig, null, 2));
 	} catch {
 		// Might not have a tsconfig.json file
 	}
