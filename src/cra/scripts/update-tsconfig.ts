@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import chalk from "chalk";
 
 const addToArrayIfNotExists = (
 	obj: Record<string, any>,
@@ -11,7 +12,7 @@ const addToArrayIfNotExists = (
 
 const updateTSConfigFile = () => {
 	try {
-		console.log("Updating tsconfig.json");
+		chalk.blue("Updating tsconfig.json");
 		const tsConfigJSON = fs.readFileSync("./tsconfig.json", "utf-8");
 		const tsConfig = JSON.parse(tsConfigJSON);
 		tsConfig.compilerOptions = {

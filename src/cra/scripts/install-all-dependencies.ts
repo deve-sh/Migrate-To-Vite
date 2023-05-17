@@ -1,4 +1,5 @@
 import { execSync } from "child_process";
+import chalk from "chalk";
 
 interface Args {
 	packageManager: "npm" | "yarn" | "pnpm";
@@ -13,7 +14,7 @@ const devDependenciesToInstall = [
 const dependenciesToInstall = [];
 
 const installAllDependencies = ({ packageManager }: Args) => {
-	console.log("Installing dependencies");
+	chalk.blue("Installing dependencies");
 	const installCommandBase =
 		packageManager === "npm"
 			? "npm install"
