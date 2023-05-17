@@ -35,7 +35,7 @@ export default defineConfig(() => {
 });`;
 
 const generateViteConfigFile = () => {
-	chalk.blue("Generating Vite Config File");
+	console.log(chalk.blue("Generating Vite Config File"));
 	fs.writeFileSync(
 		path.resolve(process.cwd(), "./vite.config.js"),
 		viteConfigFileTemplate()

@@ -7,7 +7,7 @@ interface Args {
 }
 
 const findAndReplaceEnvVariables = async ({ root }: Args) => {
-	chalk.blue("Finding and replacing any environment variables");
+	console.log(chalk.blue("Finding and replacing any environment variables"));
 	const files = await recursive(root, [
 		(file, stat) =>
 			stat.isDirectory() || (!file.endsWith(".tsx") && !file.endsWith(".jsx")),

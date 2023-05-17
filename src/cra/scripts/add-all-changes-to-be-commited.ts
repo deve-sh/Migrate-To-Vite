@@ -3,8 +3,8 @@ import chalk from "chalk";
 
 const addAllChangesToBeCommitted = () => {
 	try {
-		chalk.blue("Adding all changes to git stage for committing");
-		execSync("git add .", { stdio: 'inherit' });
+		console.log(chalk.blue("Adding all changes to git stage for committing"));
+		execSync("git add .", { stdio: "inherit" });
 	} catch {
 		// Might not be a git repo
 	}

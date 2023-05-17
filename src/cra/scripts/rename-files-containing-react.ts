@@ -7,7 +7,7 @@ interface Args {
 }
 
 const renameFilesContainingReact = async ({ root }: Args) => {
-	chalk.blue("Renaming files containing JSX");
+	console.log(chalk.blue("Renaming files containing JSX"));
 	const files = await recursive(root, [
 		(file, stat) =>
 			stat.isDirectory() || (!file.endsWith(".ts") && !file.endsWith(".js")),

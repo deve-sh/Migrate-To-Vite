@@ -14,7 +14,7 @@ const devDependenciesToInstall = [
 const dependenciesToInstall = [];
 
 const installAllDependencies = ({ packageManager }: Args) => {
-	chalk.blue("Installing dependencies");
+	console.log(chalk.blue("Installing dependencies"));
 	const installCommandBase =
 		packageManager === "npm"
 			? "npm install"

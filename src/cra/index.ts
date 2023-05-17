@@ -24,8 +24,12 @@ async function migrateCRAToVite() {
 
 	if (!root) throw new Error("Source files directory is required");
 
-	chalk.blue.bold("Starting Migration to Vite");
-	chalk.yellow.bold("Don't terminate this session until the process is complete.");
+	console.log(chalk.green.bold("Starting Migration to Vite"));
+	console.log(
+		chalk.yellow.bold(
+			"Don't terminate this session until the process is complete."
+		)
+	);
 
 	generateViteConfigFile();
 	moveIndexHTMLFile();
@@ -43,6 +47,12 @@ async function migrateCRAToVite() {
 	runPrettierOnAffectedFiles();
 	// Add updated files from prettier back to git stage
 	addAllChangesToBeCommitted();
+	console.log(chalk.green.bold("Migration to Vite is complete"));
+	console.log(
+		chalk.blueBright(
+			"There might be additional steps that might be needed post this step. Check https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md for details."
+		)
+	);
 }
 
 migrateCRAToVite();
