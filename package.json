@@ -1,6 +1,6 @@
 {
 	"name": "migrate-to-vite",
-	"version": "0.0.4",
+	"version": "0.0.6",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -31,6 +31,6 @@
 		"recursive-readdir": "^2.2.3"
 	},
 	"bin": {
-		"migrate-to-vite": "./index"
+		"migrate-to-vite": "./index.js"
 	}
 }

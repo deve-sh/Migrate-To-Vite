@@ -6,7 +6,10 @@ Currently available codemods:
 
 -   [Create React App to Vite migration codemod](https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md)
 
-> Exposes `bin` from package.json that can be used with npx to run migrations without installing the package.
+```bash
+npm i -g migrate-to-vite
+npx migrate-to-vite cra
+```
 
 If you would like to contribute more codemods, feel free to fork the repo and make changes.
 
@@ -30,4 +33,4 @@ npm i -g .
 
 -   This will install the binaries present in `package.json` and symlink those binaries for any changes, these binaries can even be executed via `npx` now.
 
--   Setup a new CRA or another framework repository in a different folder, and add the `dist` folder as a dependency and run the commands necessary to test, for example: `npx migrate-cra-to-vite`.
+-   Setup a new CRA or another framework repository in a different folder, and add the `dist` folder as a dependency and run the commands necessary to test, for example: `npx migrate-to-vite cra`.

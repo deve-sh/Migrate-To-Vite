@@ -11,7 +11,8 @@ Resources:
 Navigate from your terminal to the directory your CRA project is in and run the following command:
 
 ```bash
-npx migrate-cra-to-vite
+npm i -g migrate-to-vite
+npx migrate-to-vite cra
 ```
 
 This will open up a terminal Q/A session that will automatically migrate the project to the required Vite settings.
