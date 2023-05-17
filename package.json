@@ -1,13 +1,13 @@
 {
 	"name": "migrate-to-vite",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"bundle-packages": "tsup",
 		"bundle-packages:watch": "tsup --watch",
-		"prepublish": "npm run bundle-packages && node scripts/pre-publish",
-		"publish": "cd ./dist && npm publish"
+		"pre-publish": "npm run bundle-packages && node scripts/pre-publish",
+		"publish-package": "npm run pre-publish && cd ./dist && npm publish"
 	},
 	"keywords": [],
 	"author": "",

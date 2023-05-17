@@ -4,7 +4,9 @@ Codemods to help you migrate your existing codebase to Vite.
 
 Currently available codemods:
 
--   [Create React App to Vite migration codemod](./src/cra/README.md)
+-   [Create React App to Vite migration codemod](https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md)
+
+> Exposes `bin` from package.json that can be used with npx to run migrations without installing the package.
 
 If you would like to contribute more codemods, feel free to fork the repo and make changes.
 
