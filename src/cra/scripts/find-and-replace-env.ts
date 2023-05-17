@@ -1,13 +1,12 @@
 import fs from "node:fs";
 import recursive from "recursive-readdir";
-import chalk from "chalk";
 
 interface Args {
 	root: string;
 }
 
 const findAndReplaceEnvVariables = async ({ root }: Args) => {
-	chalk.blue("Finding and replacing any environment variables");
+	console.log("Finding and replacing any environment variables");
 	const files = await recursive(root, [
 		(file, stat) =>
 			stat.isDirectory() || (!file.endsWith(".tsx") && !file.endsWith(".jsx")),

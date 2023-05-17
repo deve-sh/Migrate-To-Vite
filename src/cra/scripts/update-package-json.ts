@@ -1,9 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import chalk from "chalk";
 
 const updatePackageJSON = () => {
-	chalk.blue("Updating package.json");
+	console.log("Updating package.json");
 	const packageJSONContents = fs.readFileSync(
 		path.resolve(process.cwd(), "./package.json"),
 		"utf-8"
