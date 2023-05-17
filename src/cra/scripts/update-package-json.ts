@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import chalk from "chalk";
+import prettier from "prettier";
 
 const updatePackageJSON = () => {
 	console.log(chalk.blue("Updating package.json"));
@@ -24,7 +25,7 @@ const updatePackageJSON = () => {
 	);
 	fs.writeFileSync(
 		path.resolve(process.cwd(), "./package.json"),
-		JSON.stringify(packageJSON, null, 2)
+		prettier.format(JSON.stringify(packageJSON, null, 2))
 	);
 };
 

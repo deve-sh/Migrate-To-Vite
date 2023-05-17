@@ -13,7 +13,6 @@ import updatePackageJSON from "./scripts/update-package-json";
 import installAllDependencies from "./scripts/install-all-dependencies";
 import updateTSConfigFile from "./scripts/update-tsconfig";
 import addAllChangesToBeCommitted from "./scripts/add-all-changes-to-be-commited";
-import runPrettierOnAffectedFiles from "./scripts/run-prettier-on-affected-files";
 
 async function migrateCRAToVite() {
 	const {
@@ -43,9 +42,6 @@ async function migrateCRAToVite() {
 	installAllDependencies({ packageManager });
 	updateTSConfigFile();
 	// Add changes to git stage
-	addAllChangesToBeCommitted();
-	runPrettierOnAffectedFiles();
-	// Add updated files from prettier back to git stage
 	addAllChangesToBeCommitted();
 	console.log(chalk.green.bold("Migration to Vite is complete"));
 	console.log(
