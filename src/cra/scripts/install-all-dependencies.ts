@@ -7,7 +7,6 @@ interface Args {
 
 const devDependenciesToInstall = [
 	"vite",
-	"eslint-plugin-react-app",
 	"@vitejs/plugin-react-swc",
 	"vite-tsconfig-paths",
 	"vite-plugin-svgr",
@@ -28,10 +27,13 @@ const installAllDependencies = ({ packageManager }: Args) => {
 		execSync(
 			`${installCommandBase} ${devInstallCommandOption} ${devDependenciesToInstall.join(
 				" "
-			)}`
+			)}`,
+			{ stdio: "inherit" }
 		);
 	if (dependenciesToInstall.length)
-		execSync(`${installCommandBase} ${dependenciesToInstall.join(" ")}`);
+		execSync(`${installCommandBase} ${dependenciesToInstall.join(" ")}`, {
+			stdio: "inherit",
+		});
 };
 
 export default installAllDependencies;
