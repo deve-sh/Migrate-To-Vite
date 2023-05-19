@@ -11,13 +11,6 @@ Resources:
 Navigate from your terminal to the directory your CRA project is in and run the following command:
 
 ```bash
-npm i -g migrate-to-vite
-npx migrate-to-vite cra
-```
-
-or just:
-
-```bash
 npx migrate-to-vite@latest cra
 ```
 

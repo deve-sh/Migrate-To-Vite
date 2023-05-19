@@ -7,13 +7,6 @@ Currently available codemods:
 -   [Create React App to Vite migration codemod](https://github.com/deve-sh/Migrate-to-Vite/blob/main/src/cra/README.md)
 
 ```bash
-npm i -g migrate-to-vite
-npx migrate-to-vite cra
-```
-
-or just:
-
-```bash
 npx migrate-to-vite@latest cra
 ```
 
