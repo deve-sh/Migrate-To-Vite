@@ -6,7 +6,7 @@ const updateGitIgnore = () => {
 	try {
 		console.log(chalk.blue("Updating .gitignore"));
 		const gitIgnoreFilePath = path.resolve(process.cwd(), "./.gitignore");
-		fs.appendFileSync(gitIgnoreFilePath, "\n# Vite related dependencies\n.vite");
+		fs.appendFileSync(gitIgnoreFilePath, "\n# Vite related dependencies\n.vite\n.swc");
 	} catch (err) {
 		// Handling and not exiting the process given the directory might not be a git repo
 		console.error("Error updating gitignore file:", err);
