@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 const moveIndexHTMLFile = () => {
 	console.log(chalk.blue("Moving index.html file"));
-	fs.cpSync(
+	fs.copyFileSync(
 		path.resolve(process.cwd(), "./public/index.html"),
 		path.resolve(process.cwd(), "index.html")
 	);
