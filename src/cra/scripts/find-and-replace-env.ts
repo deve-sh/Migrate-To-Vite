@@ -8,11 +8,11 @@ interface Args {
 
 const findAndReplaceEnvVariables = async ({ root }: Args) => {
 	console.log(chalk.blue("Finding and replacing any environment variables"));
-	const files = await recursive(root, [
-		(file, stat) =>
-			stat.isDirectory() || (!file.endsWith(".tsx") && !file.endsWith(".jsx")),
-	]);
+	const files = await recursive(root);
 	files.forEach((file) => {
+		const isNotJSFile = !file.includes(".ts") && !file.includes(".js");
+		const isDirectory = fs.statSync(file).isDirectory();
+		if (isDirectory || isNotJSFile) return;
 		let content = fs.readFileSync(file, "utf-8");
 		content = content.replace(
 			"process.env.REACT_APP_",

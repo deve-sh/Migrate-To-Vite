@@ -1,6 +1,6 @@
 {
 	"name": "migrate-to-vite",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Migrate your projects to Vite using pre-built codemods",
 	"main": "index.js",
 	"scripts": {
