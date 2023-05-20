@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs from "fs";
 import recursive from "recursive-readdir";
 import chalk from "chalk";
 
@@ -9,8 +9,7 @@ interface Args {
 const renameFilesContainingReact = async ({ root }: Args) => {
 	console.log(chalk.blue("Renaming files containing JSX"));
 	const files = await recursive(root, [
-		(file, stat) =>
-			stat.isDirectory() || (!file.endsWith(".ts") && !file.endsWith(".js")),
+		(file) => !file.endsWith(".ts") && !file.endsWith(".js"),
 	]);
 	files.forEach((file) => {
 		const content = fs.readFileSync(file, "utf-8");
