@@ -17,6 +17,7 @@ export default defineConfig(() => {
 		},
 		publicDir: 'public',
 		server: {
+			host: 'localhost',
 			open: true,
 			port: process.env.PORT || 3000,
 		},

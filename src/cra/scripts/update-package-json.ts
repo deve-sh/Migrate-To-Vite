@@ -16,7 +16,7 @@ const updatePackageJSON = () => {
 
 	packageJSON.scripts["start"] = packageJSON.scripts["start"].replace(
 		/(react-scripts|craco) start/,
-		"vite"
+		"vite --host"
 	);
 	packageJSON.scripts["build"] = packageJSON.scripts["build"].replace(
 		/(react-scripts|craco) build/,
