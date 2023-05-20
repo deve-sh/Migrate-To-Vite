@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs from "fs";
 import chalk from "chalk";
 
 const addToArrayIfNotExists = (

@@ -1,4 +1,4 @@
-const fs = require("node:fs");
+const fs = require("fs");
 
 fs.copyFileSync("LICENSE", "./dist/LICENSE");
 fs.copyFileSync("README.md", "./dist/README.md");
