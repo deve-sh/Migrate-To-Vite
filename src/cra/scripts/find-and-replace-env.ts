@@ -15,10 +15,10 @@ const findAndReplaceEnvVariables = async ({ root }: Args) => {
 		if (isDirectory || isNotJSFile) return;
 		let content = fs.readFileSync(file, "utf-8");
 		content = content.replace(
-			"process.env.REACT_APP_",
+			/process.env.REACT_APP_/g,
 			"import.meta.env.REACT_APP_"
 		);
-		content = content.replace("process.env.NODE_ENV", "import.meta.env.MODE");
+		content = content.replace(/process.env.NODE_ENV/g, "import.meta.env.MODE");
 		fs.writeFileSync(file, content);
 	});
 };
